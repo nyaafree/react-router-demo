@@ -1,0 +1,10 @@
+.homepage {
+  display: flex;
+  // 子要素を上から下に配置
+  flex-direction: column;
+  // 子要素の垂直方向の位置を中央に固定
+  align-items: center;
+  padding: 20px 80px;
+}
+
+

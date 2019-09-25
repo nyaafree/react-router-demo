@@ -1,0 +1,9 @@
+.directory-menu {
+  width: 100%;
+  display: flex;
+  //  子要素を折り返し、複数行に上から下へ並べる
+  flex-wrap: wrap;
+  // justify-contentは水平方向の揃え
+  // space-between:  最初と最後の子要素を両端に配置し、残りの要素は均等に間隔をあけて配置
+  justify-content: space-between;
+}

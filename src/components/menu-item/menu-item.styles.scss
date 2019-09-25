@@ -1,0 +1,79 @@
+.menu-item {
+  // min-width: 30%なので基本的には３分割
+  min-width: 30%;
+  height: 240px;
+  // このリンク http://webukatu.com/sample/html_advance/flexbox/ を参照
+  // flex-grow,flex-shrink,flex-basisの順に指定
+  // flex-grow:1(defaultでは0)なので最大約2倍に膨張する
+  // 親要素でflex-wrap: wrapのため１列に3個並んだら折り返される。
+  // しかし2列目には要素が2つしかないので膨張して2つのメニューアイテムで列を占有することになる。
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  // center:  中央揃え(子要素）
+  justify-content: center;
+  border: 1px solid black;
+  margin: 0 7.5px 15px;
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+  
+    & .background-image {
+      transform: scale(1.1);
+      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+  
+    & .content {
+      opacity: 0.9;
+    }
+  }
+  
+  
+
+  .background-image{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &.large{
+    height: 380px;
+  }
+
+  &:first-child {
+    margin-right: 7.5px;
+  }
+
+  &:last-child {
+    margin-left: 7.5px;
+  }
+
+  .content {
+    height: 90px;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    // 垂直方向で中央寄せ(子要素)
+    align-items: center;
+    // 水平方向で中央寄せ(子要素)
+    justify-content: center;
+    border: 1px solid black;
+    background-color: white;
+    opacity: 0.7;
+    position: absolute;
+
+    .title {
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 22px;
+      color: #4a4a4a;
+    }
+
+    .subtitle {
+      font-weight: lighter;
+      font-size: 16px;
+    }
+  }
+}

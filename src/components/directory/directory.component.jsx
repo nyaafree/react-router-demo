@@ -49,7 +49,12 @@ class Directory extends React.Component{
   render(){
     return(
       <div className="directory-menu">
+        {/* map関数の展開されるアロー関数の第一引数の中にはsections配列の要素の1つ1つが入っている */}
+        {/* title,imageUrl,id,sizeは全てsections配列の要素のオブジェクトに含まれるプロパティで、プロパティの値をpropsとして渡している */}
+        {/* https://qiita.com/syumai/items/b8d0a752740a31402477 */}
+        {/* propsとしてこういう渡し方があるというのは覚えておくこと */}
         { this.state.sections.map( ({ title, imageUrl, id, size}) => (
+          // jsxで変数を使う場合は中括弧でくくる
           <MenuItem key={id} title={ title } imageUrl={ imageUrl } size={ size }/>
         ))}
       </div>
